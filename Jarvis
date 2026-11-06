@@ -1,0 +1,22 @@
+import datetime
+import pyttsx3
+
+engine = pyttsx3.init()
+
+def speak(text):
+    print("Jarvis:", text)
+    engine.say(text)
+    engine.runAndWait()
+
+hour = datetime.datetime.now().hour
+
+if hour < 12:
+    speak("Good Morning")
+
+elif hour < 18:
+    speak("Good Afternoon")
+
+else:
+    speak("Good Evening")
+
+speak("Hello, I am Jarvis AI Assistant")
